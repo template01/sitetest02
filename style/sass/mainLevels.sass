@@ -1,0 +1,48 @@
+html, body
+  overflow-x: hidden
+
+#applvlHolder1
+  // background: red
+#applvlHolder2
+  // background: blue
+#applvlHolder3
+
+.applvlHolder
+  float: left
+  width: 100%
+  position: absolute
+  -webkit-transition: left 0.3s
+  transition: left 0.3s
+
+#indexStudioWrapper
+  -webkit-transition: opacity 0.6s
+  -moz-transition: opacity 0.6s
+  -o-transition: opacity 0.6s
+
+.lvlActive1
+  left: 0%
+  #indexStudioWrapper
+    opacity: 1
+
+
+.lvlActive2
+  left: 0%
+
+.lvlActive3
+  left: 0%
+
+
+.lvlInactive1
+  left: -100%
+  #indexStudioWrapper
+    opacity: 0
+    -webkit-transition: opacity 0s
+    -moz-transition: opacity 0s
+    -o-transition: opacity 0s
+
+
+.lvlInactive2
+  left: 100%
+
+.lvlInactive3
+  left: -100%

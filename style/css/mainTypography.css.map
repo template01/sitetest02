@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,EAAE,CACA,WAAW,CAAE,IAAI,CACjB,KAAK,CAAE,IAAK,CACZ,SAAS,CAAE,IAAI,CACf,WAAW,CAAE,OAAO,CACpB,cAAc,CAAE,SAAS,CACzB,cAAc,CAAE,GAAG,CAErB,CAAC,CACC,eAAe,CAAE,IAAI,CACrB,KAAK,CAAE,OAAO",
+"sources": ["../sass/mainTypography.sass"],
+"names": [],
+"file": "mainTypography.css"
+}

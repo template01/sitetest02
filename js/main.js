@@ -1,0 +1,10 @@
+var app = $("#app")
+app.append('<div class="applvlHolder" id="applvlHolder1"></div>')
+var lvlHolder1 = $("#applvlHolder1")
+app.append('<div class="applvlHolder" id="applvlHolder2"></div>')
+var lvlHolder2 = $("#applvlHolder2")
+app.append('<div class="applvlHolder" id="applvlHolder3"></div>')
+var lvlHolder3 = $("#applvlHolder3")
+
+// mainMenu.initMenu()
+mainRoute.initRouter()

@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,mBAAmB,CACjB,UAAU,CAAE,KAAK,CACjB,QAAQ,CAAE,KAAK,CACf,GAAG,CAAE,CAAC",
+"sources": ["../sass/indexStudio.sass"],
+"names": [],
+"file": "indexStudio.css"
+}
