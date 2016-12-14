@@ -10,15 +10,28 @@ var mainRoute = (function() {
         router
             .on({
 
-                'work/:slug': function(params) {
-                  // window.setTimeout(function(){
+                'work/:slug/:action': function(params,query) {
                     mainIndex.unfixIndexImageSlider()
                     mainLvlTransitions.indexScrollMemory = window.scrollY
-                    mainSub.initSub(params.slug)
-                    mainLvlTransitions.goToLvl(2)
-                  // },300)
+                    mainProject.goTo(params.slug,lvlHolder3)
+                    mainLvlTransitions.goToLvl(3)
 
                 },
+                'work/:slug': function(params,query) {
+                    mainIndex.unfixIndexImageSlider()
+                    mainLvlTransitions.indexScrollMemory = window.scrollY
+                    mainProject.goTo(params.slug,lvlHolder2)
+                    mainLvlTransitions.goToLvl(2)
+
+                },
+                'work/': function(params) {
+                    // mainIndex.unfixIndexImageSlider()
+                    // mainLvlTransitions.indexScrollMemory = window.scrollY
+                    mainProjectList.renderList()
+                    mainLvlTransitions.goToLvl(2)
+
+                },
+
                 '*': function() {
                     if(!ranIndex){
                       mainIndex.initIndex()

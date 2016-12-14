@@ -8,12 +8,36 @@
   background: red
   color: white
 
+
+.fixed
+  position: fixed !important
+
+.border-bottom
+  border-bottom-width: $globalBorderWidth
+  border-bottom-style: solid
+  border-bottom-color: black
+
 .alignTextCenter
   text-align: center
 
 .flex
   display: flex
   height: 100%
+
+.distribute-content
+  justify-content: space-between
+
+.no-margin
+  margin: 0
+
+.align-item-top
+  align-self: flex-start
+
+.align-item-bottom
+  align-self: flex-end
+
+.align-item-center
+  align-self: center
 
 .align-content-bottom
   align-items: flex-end
@@ -22,20 +46,44 @@
   align-items: center
   justify-content: center
 
+
+.text-align-left
+  text-align: left
+
+.text-align-center
+  text-align: center
+
+.text-align-right
+  text-align: right
+
+
+
+.padded
+  padding: $globalPadding
+
+.padded-sides
+  padding-left: $globalPadding
+  padding-right: $globalPadding
+
+
+
+
+
+
 .rotatedHeader
   display: block
   position: absolute
   top: 0
   right: 0
   bottom: 0
-  width: 4vw
+  width: 3vw
   overflow: hidden
   white-space: nowrap
   box-sizing: content-box
   // background: white
   &:hover
     background: white
-    border-left: 0.3vw solid black
+    border-left: $globalBorderWidth solid black
 
   h1
     -moz-transform-origin: 0 50%
@@ -52,5 +100,5 @@
     top: 0
     bottom: 0
     margin: auto !important
-    line-height: 3vw
-    height: 4vw
+    line-height: 6vw
+    height: 4.3vw

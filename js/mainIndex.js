@@ -27,7 +27,7 @@ var mainIndex = (function() {
 
     var indexStartstudioCam = function(target) {
         var timeoutPeriod = 800;
-        var imageURI = 'http://template01.info/serverOnly/stillcam/checkFile.php';
+        var imageURI = 'http://template-studio.nl/stillcam/checkFile.php';
         var x = 0,
             y = 0;
         var img = new Image();
@@ -110,11 +110,24 @@ var mainIndex = (function() {
                           </div>
                         </div>
                         <div class="row2">
-                          <p id="indexReadMore" class="blueBack  flex align-content-center alignTextCenter"><span onclick="mainIndex.indexScrollToFirst()">scroll down<br>or<br>
-                          <span id="" class="linkOuterParent noSmooth">
-                          <a href="/template" data-navigo-custom="">Read More</a>
-                          </span>
-                          </p>
+                          <div class="blueBack flex align-content-bottom distribute-content alignTextCenter padded">
+
+                              <h1 id="indexReadMore" class="align-item-top" onclick="mainIndex.indexScrollToFirst()">
+                              Scroll down
+                              </h1>
+
+                              <h1 id="" class="linkOuterParent noSmooth align-item-center">
+                              <a href="/template" data-navigo-custom="">Read More</a>
+                              </h1>
+
+                              <h1 id="" class="linkOuterParent noSmooth align-item-bottom">
+                              <a href="/work" data-navigo-custom="">List work</a>
+                              </h1>
+
+
+
+                            </div>
+
                           </div>
                         </div>
                       </div>
@@ -152,6 +165,9 @@ var mainIndex = (function() {
                               <div id="splashFrame02" class="splashFrame flex align-content-center alignTextCenter redBack">
                                 <h1>Identity Design</h1>
                               </div>
+                              <div id="splashFrame04" class="splashFrame flex align-content-center alignTextCenter blueBack">
+                                <h1>Hybrid Publishing</h1>
+                              </div>
                               <div id="splashFrame03" class="splashFrame flex align-content-center alignTextCenter blueBack">
                                 <h1>Graphic Design</h1>
                               </div>
@@ -162,7 +178,7 @@ var mainIndex = (function() {
                         </div>
                       `)
                 indexScrollSplashAway()
-                cycleTroughSplashFrames()
+                cycleTroughSplashFrames.start()
             })
             .error(function() {
                 console.log('error')
@@ -171,37 +187,54 @@ var mainIndex = (function() {
 
     }
 
-    var cycleTroughSplashFrames = function(){
 
-      //
-      // (function cycle() {
-      //
-      //     divs.eq(i).fadeIn(400)
-      //               .delay(1000)
-      //               .fadeOut(400, cycle);
-      //
-      //
-      // })();
+    var cycleTroughSplashFrames = {
 
-      var divs = $('.splashFrame'),
-          i = 0;
-      var timeout = 2100;
-      var action = function() {
-          // Do stuff here
-            divs.eq(i).addClass('slideIn')
-            var savedIterator= i
-            setTimeout(function(){
-              divs.eq(savedIterator).removeClass('slideIn')
+      toggleStartStop:true,
 
-            }, 3000);
-            i = ++i % divs.length;
+      start:function(){
+        cycleTroughSplashFrames.toggleStartStop=true
+        var divs = $('.splashFrame'),
+            i = 0;
+        var timeout = 2100;
 
-          setTimeout(action, timeout);
-      };
-      action();
+        startCycle = function() {
+            // Do stuff here
+              divs.eq(i).addClass('slideIn')
+              var savedIterator= i
+              setTimeout(function(){
+                divs.eq(savedIterator).removeClass('slideIn')
+
+              }, 3000);
+              i = ++i % divs.length;
+
+              if(cycleTroughSplashFrames.toggleStartStop){
+                setTimeout(startCycle, timeout);
+
+              }
+        };
+
+        startCycle();
+      },
+
+      stop:function(){
+        cycleTroughSplashFrames.toggleStartStop=false
+      }
 
 
     }
+//
+// //     var myVar;
+// //
+// // myFunction = function() {
+// //     myVar = setInterval(function(){ console.log("Hello"); }, 1000);
+// // }
+//
+// myStopFunction = function() {
+//    toggleStartStop = false
+// }
+
+
 
     var indexScrollSplashAway = function(){
       // left: 37, up: 38, right: 39, down: 40,
@@ -241,14 +274,20 @@ var mainIndex = (function() {
       }
 
       $(window).scroll(function(){
+        cycleTroughSplashFrames.stop()
+
         $(window).scrollTop(0)
         disableScroll()
         indexStudioWrapper.addClass('active')
         indexSplashWrapper.addClass('inActive')
         $(window).off("scroll");
         window.setTimeout(function(){
+          indexSplashWrapper.hide()
+        },300)
+        window.setTimeout(function(){
           enableScroll()
-        },800)
+        },1000)
+
       })
     }
 
@@ -265,7 +304,7 @@ var mainIndex = (function() {
 
             });
 
-        createWrapper = function(item) {
+        var createWrapper = function(item) {
             return `<div class="imageSlideItem linkOuterParent"  style='background-color:` + item.acf.backgroundcolor.split(':')[1] + `; background-image:url("` + item.acf.customfeaturedimage.url + `")'>
                       <div class="rotatedHeader">
                         <h1>
@@ -275,7 +314,7 @@ var mainIndex = (function() {
                     </div>`;
         }
 
-        loopItems = function(data) {
+        var loopItems = function(data) {
             return `<div id="indexImageSlider">` + data.map(createWrapper).join("") + `</div>`
         }
 
@@ -315,6 +354,7 @@ var mainIndex = (function() {
                     }, 50)
                 }
             }else{
+              // alert('no')
                   mainRoute.router.navigate( $(this).attr('href'));
             }
 
@@ -360,6 +400,7 @@ var mainIndex = (function() {
         initIndex: initIndex,
         indexStartstudioCam: indexStartstudioCam,
         indexResizestudioCam: indexResizestudioCam,
-        indexScrollToFirst:indexScrollToFirst
+        indexScrollToFirst:indexScrollToFirst,
+        cycleTroughSplashFrames:cycleTroughSplashFrames
     };
 })();

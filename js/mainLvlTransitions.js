@@ -3,19 +3,55 @@ var mainLvlTransitions = (function() {
 
     var goToLvl = function(lvl) {
 
-        eval('lvlHolder' + lvl)
-            .removeClass('lvlInactive' + lvl)
-            .addClass('lvlActive' + lvl)
+        if(lvl === 3){
+          console.log('lvl3')
 
-        levelsFiltered = levels.filter(function(item) {
-            return item !== lvl;
-        });
+          eval('lvlHolder' + lvl)
+              .removeClass('lvlInactiveThird' + lvl)
+              .addClass('lvlActiveThird' + lvl)
+              .removeClass('lvlInactive' + lvl)
+              .removeClass('lvlActive' + lvl)
 
-        for (var i in levelsFiltered) {
-            eval('lvlHolder' + levelsFiltered[i])
-                .removeClass('lvlActive' + levelsFiltered[i])
-                .addClass('lvlInactive' + levelsFiltered[i])
+
+          levelsFiltered = levels.filter(function(item) {
+              return item !== lvl;
+          });
+
+          for (var i in levelsFiltered) {
+              eval('lvlHolder' + levelsFiltered[i])
+                  .removeClass('lvlActiveThird' + levelsFiltered[i])
+                  .addClass('lvlInactiveThird' + levelsFiltered[i])
+                  .removeClass('lvlInactive' + levelsFiltered[i])
+                  .removeClass('lvlActive' + levelsFiltered[i])
+
+          }
+
+
+        }else{
+
+          eval('lvlHolder' + lvl)
+              .removeClass('lvlInactive' + lvl)
+              .addClass('lvlActive' + lvl)
+              .removeClass('lvlInactiveThird' + lvl)
+              .removeClass('lvlActiveThird' + lvl)
+
+
+          levelsFiltered = levels.filter(function(item) {
+              return item !== lvl;
+          });
+
+          for (var i in levelsFiltered) {
+              eval('lvlHolder' + levelsFiltered[i])
+                  .removeClass('lvlActive' + levelsFiltered[i])
+                  .addClass('lvlInactive' + levelsFiltered[i])
+                  .removeClass('lvlInactiveThird' + levelsFiltered[i])
+                  .removeClass('lvlActiveThird' + levelsFiltered[i])
+
+          }
+
         }
+
+
     }
 
     var indexScrollMemory = 0
