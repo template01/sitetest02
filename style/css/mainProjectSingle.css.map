@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AACA,kBAAkB,CAChB,UAAU,CAAE,KAAK,CAEjB,0CAAuB,CACrB,WAAW,CAAE,GAAG",
+"sources": ["../sass/mainProjectSingle.sass"],
+"names": [],
+"file": "mainProjectSingle.css"
+}
