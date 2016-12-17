@@ -1,57 +1,66 @@
 html, body
   overflow-x: hidden
 
-#applvlHolder
-  // background: red
-  // width: 100%
-
-#applvlHolder2
-  // width: 100%
-  // background: blue
-
-#applvlHolder3
-  // width: 100%
+.remove-transform
+  -webkit-transform: none !important
+  transform: none !important
 
 .applvlHolder
   float: left
   width: 100%
   position: absolute
-  -webkit-transition: left 0.3s
-  -moz-transition: left 0.3s
-  transition: left 0.3s
+  -webkit-transform: translate3d(0, 0, 0)
+  transform: translate3d(0, 0, 0)
+  transition: transform 0.3s
+  -webkit-transition: transform 0.3s
+  &:not(.remove-transform)
+    overflow: hidden
+    max-height: 100vh
 
 .lvlActive1
-  left: 0%
+  -webkit-transform: translate3d(0, 0, 0)
+  transform: translate3d(0, 0, 0)
 
 .lvlActiveThird1
-  left: 0%
+  -webkit-transform: translate3d(0, 0, 0)
+  transform: translate3d(0, 0, 0)
 
 .lvlActive2
-  left: 0%
+  -webkit-transform: translate3d(0, 0, 0)
+  transform: translate3d(0, 0, 0)
 
 .lvlActiveThird2
-  left: 0%
+  -webkit-transform: translate3d(0, 0, 0)
+  transform: translate3d(0, 0, 0)
 
 .lvlActive3
-  left: 0%
+  -webkit-transform: translate3d(0, 0, 0)
+  transform: translate3d(0, 0, 0)
 
 .lvlActiveThird3
-  left: 0%
+  -webkit-transform: translate3d(0, 0, 0)
+  transform: translate3d(0, 0, 0)
 
 .lvlInactive1
-  left: -100%
+  -webkit-transform: translate3d(-100%, 0, 0)
+  transform: translate3d(-100%, 0, 0)
 
 .lvlInactiveThird1
-  left: -100%
+  -webkit-transform: translate3d(-100%, 0, 0)
+  transform: translate3d(-100%, 0, 0)
 
 .lvlInactive2
-  left: 100%
+  -webkit-transform: translate3d(100%, 0, 0)
+  transform: translate3d(100%, 0, 0)
 
 .lvlInactiveThird2
-  left: -100%
+  -webkit-transform: translate3d(-100%, 0, 0)
+  transform: translate3d(-100%, 0, 0)
 
 .lvlInactive3
-  left: 100%
+  -webkit-transform: translate3d(100%, 0, 0)
+  transform: translate3d(100%, 0, 0)
 
 .lvlInactiveThird3
-  left: 100%
+  -webkit-transform: translate3d(100%, 0, 0)
+  transform: translate3d(100%, 0, 0)
