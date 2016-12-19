@@ -33,13 +33,13 @@ var mainProject = (function(slug) {
 
     var itemSingleWrapper = function(item) {
         return `<div id="projectItemSingle" >
-                <div class="rotatedHeader pull-left force-rotated-header-border">
+                <div class="rotatedHeader pull-left">
                   <h1 class="fixed padded-sides flex distribute-content width-is-height">
                     `+checkIfArchive()+`
                     <span>`+item.title.rendered+`</span>
                   </h1>
                 </div>
-                <div class="" id="projectItemSingleInner">
+                <div class="border-left" id="projectItemSingleInner">
                   <h1 class="no-margin flex align-content-vertical-center border-bottom default-height padded-sides">
                     <span class="text-align-left">`+ item.title.rendered +`</span>
                     <span class="text-align-center">`+ item.date +`</span>

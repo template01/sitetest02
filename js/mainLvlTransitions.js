@@ -10,9 +10,21 @@ var mainLvlTransitions = (function() {
                 .addClass('lvlActiveThird' + lvl)
                 .removeClass('lvlInactive' + lvl)
                 .removeClass('lvlActive' + lvl)
-
+                //
+                // setTimeout(function(){
             eval('lvlHolder' + lvl).addClass('remove-transform')
-
+            // setTimeout(function() {
+            //   $('#projectItemSingle').children().first().removeClass("rotatedHeader")
+            //     // $('#projectItemSingle').children().first().addClass("rotatedHeader")
+            //     setTimeout(function() {
+            //
+            //       $('#projectItemSingle').children().first().addClass("rotatedHeader")
+            //
+            //     }, 1)
+            //
+            //     console.log('run')
+            //
+            // }, 300)
 
             levelsFiltered = levels.filter(function(item) {
                 return item !== lvl;
@@ -42,7 +54,21 @@ var mainLvlTransitions = (function() {
                 .removeClass('lvlInactiveThird' + lvl)
                 .removeClass('lvlActiveThird' + lvl)
 
+            // setTimeout(function(){
             eval('lvlHolder' + lvl).addClass('remove-transform')
+            // setTimeout(function() {
+            //
+            //   $('#projectItemSingle').children().first().removeClass("rotatedHeader")
+            //     // $('#projectItemSingle').children().first().addClass("rotatedHeader")
+            //     setTimeout(function() {
+            //
+            //       $('#projectItemSingle').children().first().addClass("rotatedHeader")
+            //
+            //     }, 1)
+            //
+            //     console.log('run')
+            //
+            // }, 300)
 
             levelsFiltered = levels.filter(function(item) {
                 return item !== lvl;

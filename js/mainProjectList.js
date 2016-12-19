@@ -33,13 +33,13 @@ var mainProjectList = (function() {
 
     var loopItems = function(data) {
         return `<div id="projectList" >
-            <div class="rotatedHeader pull-left force-rotated-header-border">
+            <div class="rotatedHeader pull-left ">
               <h1 class="fixed padded-sides flex distribute-content width-is-height">
                 <a href="/" data-navigo> BACK</a>
                 <a href="/" data-navigo> WORK LIST</a>
               </h1>
             </div>
-            <div id="innerList">
+            <div class="border-left" id="innerList">
             <div class="padded-sides border-bottom"><h1 class="flex default-height distribute-content no-margin align-content-center">`+
             `<span class="text-align-left">Title</span>`+
             `<span class="text-align-center">Time</span>`+
