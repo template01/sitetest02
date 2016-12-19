@@ -101,7 +101,7 @@ var mainIndex = (function() {
                         <div class="row2">
                           <div id="indexStudioCam" class="linkOuterParent noSmooth">
                             <canvas id="indexStudioCamInner" width="1920px" height="1080px" style="display:block;"></canvas>
-                            <div class="rotatedHeader pull-right">
+                            <div class="rotatedHeader border-left pull-right">
                               <h1>
                                 <a href="/cam" data-navigo-custom="">Studio Camera</a>
                               </h1>
@@ -306,7 +306,7 @@ var mainIndex = (function() {
 
         var createWrapper = function(item) {
             return `<div class="imageSlideItem linkOuterParent"  style='background-color:` + item.acf.backgroundcolor.split(':')[1] + `; background-image:url("` + item.acf.customfeaturedimage.url + `")'>
-                      <div class="rotatedHeader pull-right">
+                      <div class="rotatedHeader border-left pull-right">
                         <h1>
                           <a href="work/` + item.slug + `" data-navigo-custom>` + item.title.rendered + `</a>
                         </h1>
